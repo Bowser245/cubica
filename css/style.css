@@ -1,0 +1,208 @@
+/* Style Général - Univers Cubica */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #161616;
+    padding: 15px 0;
+    border-bottom: 4px solid #5c8a34;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #76b539;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.2s, border-bottom 0.2s;
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #76b539;
+    border-bottom: 2px solid #76b539;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: 70vh;
+}
+
+/* Zone Hero (Accueil) */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('../Assets/BaseTextures/main-menu.png') no-repeat center center/cover;
+    border-radius: 12px;
+    border: 2px solid #333;
+    margin-bottom: 5px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px #000;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #b0b0b0;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* Boutons */
+.btn-cta {
+    display: inline-block;
+    background-color: #5c8a34;
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 4px #3b5a21, 0 6px 10px rgba(0,0,0,0.4);
+    transition: transform 0.1s, background 0.2s;
+}
+
+.btn-cta:hover {
+    background-color: #6da33e;
+    transform: translateY(-2px);
+}
+
+.btn-cta:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px #3b5a21;
+}
+
+/* Grille de fonctionnalités */
+.grid-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: #181818;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #282828;
+    border-top: 4px solid #76b539;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background-color: #1e1e1e;
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+/* Tableaux (Guides et Données) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #141414;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #252525;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+th {
+    background-color: #5c8a34;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background-color: #1a1a1a;
+}
+
+/* Page de téléchargement */
+.download-box {
+    background-color: #161616;
+    border: 2px dashed #5c8a34;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.requirements {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    margin-top: 30px;
+    border: 1px solid #222;
+}
+
+.requirements ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.requirements li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111;
+    border-top: 1px solid #222;
+    color: #666;
+    margin-top: 60px;
+}
