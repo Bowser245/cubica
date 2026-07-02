@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubica - Guide de Jeu & Spécifications</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">CUBICA</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="guide.html" class="active">Guide Technique</a></li>
+                <li><a href="download.html">Téléchargement</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Manuel Opérationnel du Jeu</h2>
+        <p>Ce guide récapitule les comportements physiques et mécaniques codés au cœur du moteur de Cubica.</p>
+
+        <h3>Règles Physiques et Système de Survie</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mécanique</th>
+                    <th>Comportement du Moteur</th>
+                    <th>Impact en jeu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>La Zone du Vide (The Void)</strong></td>
+                    <td>Se déclenche automatiquement si la coordonnée de hauteur du joueur (Y) descend en dessous de -40.</td>
+                    <td>La gravité se coupe à -50 et le joueur subit périodiquement 4 points de dégâts (2 cœurs).</td>
+                </tr>
+                <tr>
+                    <td><strong>Régénération Active</strong></td>
+                    <td>S'active dès que les points de vie actuels descendent en dessous du maximum de 20 PV.</td>
+                    <td>Récupération automatique de 1 PV toutes les 4 secondes si aucun dégât n'est subi.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mécanique de Parade</strong></td>
+                    <td>Animation de la main via interpolation linéaire (lerp) lors de l'activation des outils.</td>
+                    <td>Parade temporaire active à l'écran, soumise à un délai de récupération global (cooldown).</td>
+                </tr>
+                <tr>
+                    <td><strong>Collecte d'Éléments</strong></td>
+                    <td>Détection de proximité des entités flottantes ou coffres détruits via calcul de distance relative.</td>
+                    <td>Remplissage automatique des compartiments (slots) de votre hotbar (limité à 64 unités par type).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 40px;">Architecture des Blocs Supportés</h3>
+        <p>Le moteur extrait la configuration géométrique de chaque structure. Voici les formes de primitives gérées par le script d'instanciation :</p>
+        <ul>
+            <li><strong>Cube Standard :</strong> Bloc de construction intégral (Terre, Roche, Troncs).</li>
+            <li><strong>Slabs (Top / Bottom) :</strong> Demi-blocs optimisés avec décalage de collision (0.01 d'épaisseur).</li>
+            <li><strong>Parois Latérales (Left / Right / Front / Back) :</strong> Structures fines idéales pour les décorations de surface et tableaux.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cubica Game Project. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
