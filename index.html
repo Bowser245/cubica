@@ -13,15 +13,15 @@
         }
         
         .version-label {
-            color: #00ff00; /* Vert fluo */
+            color: #76b539; /* Nouveau vert personnalisé */
             font-weight: bold;
             margin-right: 10px;
         }
 
         .version-dropdown {
             background-color: #1a1a1a; /* Gris foncé/Noir */
-            color: #00ff00; /* Vert fluo */
-            border: 2px solid #00ff00;
+            color: #76b539; /* Nouveau vert personnalisé */
+            border: 2px solid #76b539;
             padding: 8px 15px;
             font-size: 1rem;
             border-radius: 5px;
@@ -32,7 +32,7 @@
 
         .version-dropdown option {
             background-color: #111;
-            color: #00ff00;
+            color: #76b539;
         }
     </style>
 </head>
@@ -83,6 +83,7 @@
     
     <footer>
         <p>&copy; 2026 Cubica Game Project. Propulsé par Ursina Engine. Tous droits réservés.</p>
+        <p style="color: #676767">Note : Cubica n'est absolument pas les résultats de recherche Google, Cubica est un projet à part.</p>
     </footer>
     
     <script>
@@ -97,7 +98,7 @@
 
       // Script pour charger et gérer le JSON du Changelog
       document.addEventListener("DOMContentLoaded", () => {
-          const jsonUrl = "changelog.json";
+          const jsonUrl = window.BotSettings.JSON_FILE;
           const selectElement = document.getElementById("versionSelect");
           const contentElement = document.getElementById("changelogContent");
           let changelogData = {};
