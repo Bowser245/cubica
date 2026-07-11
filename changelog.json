@@ -9,16 +9,6 @@
         "Système de sauvegarde automatique et dynamique.",
         "Cycle jour ou nuit fonctionnel avec apparition de monstres."
       ]
-    },
-    "1.2.0": {
-      "publish-date": "11 Juillet 2026",
-      "title": "Lancement officiel",
-      "features": [
-        "Intégration initiale du moteur Ursina Engine.",
-        "Génération de monde procédural et gestion des blocs.",
-        "Système de sauvegarde automatique et dynamique.",
-        "Cycle jour ou nuit fonctionnel avec apparition de monstres."
-      ]
     }
   }
 }
