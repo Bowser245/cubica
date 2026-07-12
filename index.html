@@ -5,36 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cubica - Le Sandbox Optimisé</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Style personnalisé pour le menu déroulant et la section Changelog */
-        .version-selector-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .version-label {
-            color: #76b539; /* Nouveau vert personnalisé */
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .version-dropdown {
-            background-color: #1a1a1a; /* Gris foncé/Noir */
-            color: #76b539; /* Nouveau vert personnalisé */
-            border: 2px solid #76b539;
-            padding: 8px 15px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            outline: none;
-            font-weight: bold;
-        }
-
-        .version-dropdown option {
-            background-color: #111;
-            color: #76b539;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -66,20 +36,23 @@
             </div>
         </div>
 
-        <h2 style="text-align: center; margin-top: 60px;">Notes de mise à jour </h2>
-        
-        
-
+        <h2 style="text-align: center; margin-top: 60px;">Notes de mise à jour</h2>
         <div class="changelog-section" style="margin-bottom: 50px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px;">
-            <div id="changelogContent" class="changelog-item">
-                <p>Chargement des notes de mise à jour...</p>
+            <div class="changelog-item">
+                <h3>Version 1.0.0 - Lancement Officiel</h3>
+                <p style="color: #888; font-size: 0.9em; margin-top: -5px;">Sortie le 2 juillet 2026</p>
+                <ul>
+                    <li>Intégration initiale du moteur Ursina Engine.</li>
+                    <li>Génération de monde procédural et gestion des blocs.</li>
+                    <li>Système de sauvegarde automatique et dynamique.</li>
+                    <li>Cycle jour ou nuit fonctionnel avec apparition de monstres.</li>
+                </ul>
             </div>
         </div>
     </div>
     
     <footer>
         <p>&copy; 2026 Cubica Game Project. Propulsé par Ursina Engine. Tous droits réservés.</p>
-        <p style="color: #676767">Note : Cubica n'est absolument pas les résultats de recherche Google, Cubica est un projet à part.</p>
     </footer>
     
     <script>
@@ -92,72 +65,7 @@
         JSON_FILE: "data.json"
       };
     </script>
-    <script>
-        
-      // Script pour charger et gérer le JSON du Changelog
-      document.addEventListener("DOMContentLoaded", () => {
-          const jsonUrl = window.BotSettings.JSON_FILE;
-          const selectElement = document.getElementById("versionSelect");
-          const contentElement = document.getElementById("changelogContent");
-          let changelogData = {};
-
-          // Fonction pour afficher une version spécifique
-          function displayVersion(versionKey) {
-              const versionData = changelogData[versionKey];
-              if (!versionData) return;
-
-              // Formatage des fonctionnalités sous forme de liste
-              const featuresHtml = versionData.features.map(feat => `<li>${feat}</li>`).join("");
-
-              // Rendu final demandé : "Version [laversion] - [le titre]" et "Sortie le [date de sortie]"
-              contentElement.innerHTML = `
-                  <h3>Version ${versionKey} - ${versionData.title}</h3>
-                  <p style="color: #888; font-size: 0.9em; margin-top: -5px;">Sortie le ${versionData["publish-date"]}</p>
-                  <ul>
-                      ${featuresHtml}
-                  </ul>
-              `;
-          }
-
-          // Récupération des données du fichier JSON
-          fetch(jsonUrl)
-              .then(response => response.json())
-              .then(data => {
-                  if (data && data.versions) {
-                      changelogData = data.versions;
-                      const versionsKeys = Object.keys(changelogData);
-
-                      // Vider le select au cas où
-                      selectElement.innerHTML = "";
-
-                      // Remplir le menu déroulant (la plus récente en premier)
-                      versionsKeys.reverse().forEach((versionKey, index) => {
-                          const option = document.createElement("option");
-                          option.value = versionKey;
-                          option.textContent = `Version ${versionKey}`;
-                          selectElement.appendChild(option);
-                      });
-
-                      // Sélectionner par défaut la dernière version (la première de la liste inversée)
-                      if (versionsKeys.length > 0) {
-                          selectElement.value = versionsKeys[0];
-                          displayVersion(versionsKeys[0]);
-                      }
-                  } else {
-                      contentElement.innerHTML = "<p>Erreur: Format du fichier JSON invalide.</p>";
-                  }
-              })
-              .catch(error => {
-                  console.error("Erreur de chargement du JSON :", error);
-                  contentElement.innerHTML = "<p>Impossible de charger les notes de mise à jour.</p>";
-              });
-
-          // Écouter les changements du menu déroulant
-          selectElement.addEventListener("change", (e) => {
-              displayVersion(e.target.value);
-          });
-      });
-    </script>
+    
     <script src="https://bowser245.github.io/gpt-js/widget.js"></script>
 </body>
 </html>
